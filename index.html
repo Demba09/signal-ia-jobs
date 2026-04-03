@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script defer data-domain="demba09.github.io" src="https://plausible.io/js/script.js"></script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -30,6 +31,7 @@
           <a href="#problem">Pourquoi</a>
           <a href="#features">Produit</a>
           <a href="#proof">Audience</a>
+          <a href="recruiter.html">Recruteurs</a>
           <a href="#cta">Waitlist</a>
         </nav>
       </header>
@@ -49,7 +51,7 @@
               Signal IA Jobs trie les offres les plus pertinentes en data, IA, analytics, ML et MLOps.
               Moins d’annonces, plus d’opportunités vraiment qualifiées.
             </p>
-            <div class="signup-card" id="waitlist">
+            <div class="signup-card" id="waitlist" data-track-form="waitlist">
               <div class="signup-card-head">
                 <div>
                   <p class="card-kicker">Waitlist</p>
@@ -63,12 +65,14 @@
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_next" value="https://demba09.github.io/signal-ia-jobs/thanks.html" />
                 <input type="email" name="email" placeholder="votre@email.com" aria-label="Adresse email" required />
-                <button class="button primary" type="submit">Recevoir les offres</button>
+                <button class="button primary" type="submit" data-track-event="Waitlist CTA Click" data-track-location="hero">
+                  Recevoir les offres
+                </button>
               </form>
               <p class="helper-text">1 email par semaine max. Désinscription en un clic.</p>
             </div>
             <div class="cta-row">
-              <a class="button secondary" href="mailto:dembafofana310@gmail.com?subject=Publier%20une%20offre%20sur%20Signal%20IA%20Jobs&body=Bonjour%2C%20je%20souhaite%20publier%20une%20offre%20sur%20Signal%20IA%20Jobs.">
+              <a class="button secondary" href="recruiter.html">
                 Publier une offre
               </a>
             </div>
@@ -227,15 +231,39 @@
             </p>
           </div>
           <div class="cta-actions">
-            <a class="button primary" href="mailto:dambafofana310@gmail.com?subject=Je%20veux%20rejoindre%20Signal%20IA%20Jobs">
+            <a class="button primary" data-track-event="Recruiter CTA Click" data-track-location="footer" href="mailto:dembafofana310@gmail.com?subject=Je%20veux%20rejoindre%20Signal%20IA%20Jobs">
               Recevoir les premiers accès
             </a>
-            <a class="button ghost" href="mailto:dambafofana310@gmail.com?subject=Je%20veux%20publier%20une%20offre%20sur%20Signal%20IA%20Jobs">
+            <a class="button ghost" data-track-event="Recruiter CTA Click" data-track-location="footer" href="recruiter.html">
               Parler côté recruteur
             </a>
           </div>
         </section>
       </main>
     </div>
+    <script>
+      (function () {
+        function track(name, props) {
+          if (typeof window.plausible === 'function') {
+            window.plausible(name, props ? { props: props } : undefined);
+          }
+        }
+
+        document.addEventListener('click', function (e) {
+          var el = e.target.closest('[data-track-event]');
+          if (!el) return;
+          track(el.getAttribute('data-track-event'), {
+            location: el.getAttribute('data-track-location') || 'unknown'
+          });
+        });
+
+        var form = document.querySelector('form[data-track-form="waitlist"]');
+        if (form) {
+          form.addEventListener('submit', function () {
+            track('Waitlist Submit');
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
