@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recruteurs — Signal IA Jobs</title>
+    <title>Recruteurs — Signal</title>
     <meta
       name="description"
-      content="Publiez vos offres data et IA auprès d’une audience qualifiée en France et en Europe de l’Ouest avec Signal IA Jobs."
+      content="Publiez vos offres tech auprès des premiers candidats et abonnés de Signal. Lancement France d’abord, puis Europe de l’Ouest."
     />
     <meta name="robots" content="noindex,nofollow" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,14 +24,14 @@
         <div class="brand-lockup">
           <div class="brand-mark">S</div>
           <div>
-            <p class="brand-name">Signal IA Jobs</p>
-            <p class="brand-subtitle">Publiez vos jobs data & IA en Europe de l’Ouest</p>
+            <p class="brand-name">Signal</p>
+            <p class="brand-subtitle">Publication d’offres tech</p>
           </div>
         </div>
         <nav class="topnav">
           <a href="index.html">Accueil</a>
           <a href="#why">Pourquoi</a>
-          <a href="#roles">Postes</a>
+          <a href="#roles">Profils</a>
           <a href="#contact">Publier</a>
         </nav>
       </header>
@@ -41,37 +41,42 @@
           <div class="hero-copy">
             <div class="hero-badges">
               <span class="badge badge-soft">Recruteurs</span>
-              <span class="badge">Audience qualifiée</span>
+              <span class="badge">France d’abord • premiers recruteurs</span>
             </div>
             <h1>
-              Publiez votre offre data et IA
-              <span>devant les bons profils en Europe de l’Ouest.</span>
+              Publiez votre offre tech
+              <span>dès le lancement.</span>
             </h1>
             <p class="hero-text">
-              Signal IA Jobs aide les entreprises à toucher des talents en data, IA, ML, MLOps et analytics.
-              Un canal simple, premium et ciblé pour obtenir des candidatures plus pertinentes en France et en Europe de l’Ouest.
+              Signal lance une sélection de jobs tech centrée sur la France. Si vous recrutez en software,
+              data, product, cloud ou cybersécurité, vous pouvez faire partie des premiers recruteurs mis en avant.
             </p>
-            <div class="signup-card" id="contact" data-track-form="recruiter">
+            <div class="signup-card">
               <div class="signup-card-head">
                 <div>
                   <p class="card-kicker">Soumettre une offre</p>
-                  <h3>On vous aide à publier rapidement.</h3>
+                  <h3 id="contact">Parlez-nous de votre recrutement.</h3>
                 </div>
                 <span class="chip">Réponse rapide</span>
               </div>
-              <form class="signup-form" action="https://formsubmit.co/dembafofana310@gmail.com" method="POST">
-                <input type="hidden" name="_subject" value="Nouvelle offre recruteur — Signal IA Jobs" />
+              <form
+                class="signup-form"
+                action="https://formsubmit.co/dembafofana310@gmail.com"
+                method="POST"
+                data-track-form="recruiter"
+              >
+                <input type="hidden" name="_subject" value="Nouvelle demande recruteur — Signal" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_next" value="https://demba09.github.io/signal-ia-jobs/recruiter-thanks.html" />
                 <input type="text" name="company" placeholder="Nom de l’entreprise" aria-label="Nom de l’entreprise" required />
                 <input type="email" name="email" placeholder="Email professionnel" aria-label="Email professionnel" required />
-                <textarea name="job" placeholder="Décrivez le poste, la stack et le contexte" aria-label="Description de l'offre" rows="4" required></textarea>
+                <textarea name="job" placeholder="Décrivez le poste, la localisation, le niveau et le lien si vous en avez un." aria-label="Description de l'offre" rows="4" required></textarea>
                 <button class="button primary" type="submit" data-track-event="Recruiter CTA Click" data-track-location="hero">
                   Envoyer ma demande
                 </button>
               </form>
-              <p class="helper-text">Nous revenons vers vous rapidement avec le meilleur format de publication.</p>
+              <p class="helper-text">Pas de promesse gonflée : lancement en cours, sélection éditoriale et approche manuelle.</p>
             </div>
           </div>
 
@@ -79,16 +84,16 @@
             <div class="dashboard-card floating-one">
               <div class="dashboard-topline">
                 <span class="dot"></span>
-                <span>Canal spécialisé</span>
+                <span>Positionnement</span>
               </div>
               <div class="metric-stack">
                 <div>
-                  <p class="metric-label">Cibles</p>
-                  <p class="metric-value">Data / IA</p>
+                  <p class="metric-label">Marché initial</p>
+                  <p class="metric-value">France</p>
                 </div>
                 <div>
-                  <p class="metric-label">Marchés</p>
-                  <p class="metric-value">France / Europe</p>
+                  <p class="metric-label">Profils</p>
+                  <p class="metric-value">Tech</p>
                 </div>
               </div>
             </div>
@@ -96,16 +101,16 @@
             <div class="job-card large">
               <div class="job-card-head">
                 <div>
-                  <p class="job-company">Exemple</p>
-                  <h3>Machine Learning Engineer</h3>
+                  <p class="job-company">Exemple de mise en avant</p>
+                  <h3>Staff Frontend Engineer</h3>
                 </div>
-                <span class="chip">Featured</span>
+                <span class="chip">Exemple</span>
               </div>
-              <p class="job-meta">LLM • MLOps • Python • 70–90k€</p>
+              <p class="job-meta">React • TypeScript • Design systems • 75–95k€</p>
               <div class="tag-row">
-                <span>Remote</span>
                 <span>CDI</span>
-                <span>Start-up</span>
+                <span>Paris / Remote</span>
+                <span>Scale-up</span>
               </div>
             </div>
           </div>
@@ -113,58 +118,55 @@
 
         <section class="section-grid" id="why">
           <div class="section-heading">
-            <span class="eyebrow">Pourquoi Signal IA Jobs</span>
-            <h2>Une audience plus ciblée que les boards généralistes.</h2>
+            <span class="eyebrow">Pourquoi Signal</span>
+            <h2>Un canal éditorial plus ciblé qu’un board généraliste.</h2>
           </div>
           <div class="problem-grid">
             <article class="info-card">
-              <p class="card-kicker">Audience qualifiée</p>
-              <h3>Profils déjà intéressés par la data et l’IA.</h3>
-              <p>Vos offres arrivent devant des candidats qui comprennent vos enjeux techniques et métier.</p>
+              <p class="card-kicker">Audience ciblée</p>
+              <h3>Un message pensé pour des profils tech exigeants.</h3>
+              <p>Le positionnement du site et de la sélection aide à rendre l’offre plus lisible et plus pertinente.</p>
             </article>
             <article class="info-card">
-              <p class="card-kicker">Publication simple</p>
-              <h3>Un process léger et rapide.</h3>
-              <p>Vous envoyez l’offre, on vous aide à la structurer, puis elle est publiée dans un format premium.</p>
+              <p class="card-kicker">Format simple</p>
+              <h3>Un process léger pour publier vite.</h3>
+              <p>Vous nous envoyez les infos essentielles, puis nous structurons la mise en avant dans un format clair.</p>
             </article>
             <article class="info-card accent">
-              <p class="card-kicker">Image employeur</p>
-              <h3>Une vitrine moderne pour vos recrutements.</h3>
-              <p>Un cadre éditorial propre qui valorise votre marque employeur auprès des talents data et IA sur les bons marchés.</p>
+              <p class="card-kicker">Lancement</p>
+              <h3>Faites partie des premiers recruteurs visibles.</h3>
+              <p>Le bon moment pour tester un canal plus sélectif avant l’élargissement du marché.</p>
             </article>
           </div>
         </section>
 
         <section class="feature-layout" id="roles">
           <div class="feature-panel dark">
-            <span class="eyebrow">Postes ciblés</span>
-            <h2>Les rôles que nous mettons en avant.</h2>
+            <span class="eyebrow">Profils couverts</span>
+            <h2>Les recrutements visés au lancement.</h2>
             <ul class="feature-list">
-              <li>Data Engineer</li>
-              <li>Data Scientist</li>
-              <li>Machine Learning Engineer</li>
-              <li>AI Engineer / Applied AI</li>
-              <li>MLOps Engineer</li>
-              <li>Analytics Engineer</li>
-              <li>Data / AI Product Manager</li>
+              <li>Backend, frontend, fullstack, mobile et platform engineering</li>
+              <li>Data, IA, analytics et MLOps</li>
+              <li>Product, infrastructure, DevOps, cloud et cybersécurité</li>
+              <li>France d’abord, puis ouverture progressive vers l’Europe de l’Ouest</li>
             </ul>
           </div>
 
           <div class="feature-stack">
             <article class="mini-card">
               <p class="card-kicker">1</p>
-              <h3>Vous soumettez l’offre</h3>
-              <p>Nom de l’entreprise, intitulé, contexte, localisation et lien de candidature.</p>
+              <h3>Vous partagez l’offre</h3>
+              <p>Intitulé, contexte, localisation, niveau et lien de candidature si disponible.</p>
             </article>
             <article class="mini-card">
               <p class="card-kicker">2</p>
-              <h3>On optimise la mise en avant</h3>
-              <p>Nous aidons à clarifier le message pour attirer les bons candidats.</p>
+              <h3>On clarifie la fiche</h3>
+              <p>Le but est d’améliorer la lisibilité sur la stack, le niveau, la localisation et le contexte.</p>
             </article>
             <article class="mini-card">
               <p class="card-kicker">3</p>
-              <h3>Vous gagnez en visibilité</h3>
-              <p>Publication sur un canal spécialisé, avec une audience déjà alignée sur la data et l’IA.</p>
+              <h3>Vous testez un canal ciblé</h3>
+              <p>Avec un positionnement éditorial plus sélectif et plus lisible que les boards généralistes.</p>
             </article>
           </div>
         </section>
@@ -172,17 +174,16 @@
         <section class="cta-block">
           <div>
             <span class="eyebrow">Publier maintenant</span>
-            <h2>Vous recrutez sur la data ou l’IA ?</h2>
+            <h2>Vous recrutez sur un rôle tech ?</h2>
             <p>
-              Déposez votre offre et touchez une audience déjà intéressée par les métiers
-              techniques et les environnements startup en France et en Europe de l’Ouest.
+              Envoyez votre besoin pour faire partie des premiers recruteurs présents sur Signal.
             </p>
           </div>
           <div class="cta-actions">
             <a class="button primary" data-track-event="Recruiter CTA Click" data-track-location="bottom" href="#contact">
               Soumettre une offre
             </a>
-            <a class="button ghost" data-track-event="Recruiter CTA Click" data-track-location="bottom" href="mailto:dembafofana310@gmail.com?subject=Question%20publication%20Signal%20IA%20Jobs">
+            <a class="button ghost" data-track-event="Recruiter CTA Click" data-track-location="bottom" href="mailto:dembafofana310@gmail.com?subject=Question%20publication%20Signal">
               Poser une question
             </a>
           </div>

@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Merci — Signal IA Jobs</title>
-    <meta name="description" content="Merci pour votre inscription à la waitlist Signal IA Jobs." />
+    <title>Merci — Signal</title>
+    <meta name="description" content="Merci pour votre inscription à la liste d’attente Signal." />
+    <meta name="robots" content="noindex,nofollow" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script defer data-domain="demba09.github.io" src="https://plausible.io/js/script.js"></script>
     <style>
       :root { --bg:#f5f5f2; --text:#101828; --muted:#667085; --accent:#4454ff; }
       * { box-sizing: border-box; }
@@ -48,12 +50,17 @@
   </head>
   <body>
     <main class="card">
-      <h1>Merci, vous êtes sur la liste.</h1>
+      <h1>Merci, vous êtes bien inscrit.</h1>
       <p>
-        On vous prévient dès l’ouverture de Signal IA Jobs. Vous recevrez une sélection courte et premium des meilleures offres data & IA pour francophones.
+        On vous préviendra au lancement de Signal et lors des premières sélections de jobs tech.
       </p>
-      <a href="/signal-ia-jobs/">Retour à la landing page</a>
+      <a href="index.html">Retour à la landing page</a>
       <p class="small">0 spam. 1 email par semaine max.</p>
     </main>
+    <script>
+      window.addEventListener('DOMContentLoaded', function () {
+        if (typeof window.plausible === 'function') window.plausible('Waitlist Conversion');
+      });
+    </script>
   </body>
 </html>

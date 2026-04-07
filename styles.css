@@ -104,12 +104,17 @@ body::before {
   display: flex;
   align-items: center;
   gap: 22px;
+  flex-wrap: wrap;
 }
 
 .topnav a {
   text-decoration: none;
   color: #344054;
   font-size: 0.95rem;
+}
+
+.topnav a:hover {
+  color: var(--text);
 }
 
 .hero-card {
@@ -231,6 +236,14 @@ body::before {
   color: #98a2b3;
 }
 
+.signup-form input:focus-visible,
+.signup-form textarea:focus-visible,
+.button:focus-visible,
+.topnav a:focus-visible {
+  outline: 3px solid rgba(68, 84, 255, 0.22);
+  outline-offset: 2px;
+}
+
 .hero-text {
   font-size: 1.07rem;
   max-width: 620px;
@@ -243,9 +256,15 @@ body::before {
 }
 
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
   padding: 15px 20px;
   border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font: inherit;
   font-weight: 700;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
