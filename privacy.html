@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal — Confidentialité</title>
+  <meta name="robots" content="noindex,follow" />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root {
+      color-scheme: light dark;
+      --max: 760px;
+      --bg: #f5f7fb;
+      --surface: rgba(255, 255, 255, 0.9);
+      --text: #0f172a;
+      --muted: #5b6475;
+      --line: rgba(15, 23, 42, 0.08);
+      --accent: #4454ff;
+      --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1020;
+        --surface: rgba(255, 255, 255, 0.08);
+        --text: #f5f7fb;
+        --muted: #b5bfd4;
+        --line: rgba(255, 255, 255, 0.09);
+        --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .page {
+      padding: 48px 0 72px;
+    }
+
+    .card {
+      padding: 28px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    h1, h2, p, ul { margin: 0; }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 1.1rem;
+      margin: 28px 0 10px;
+      letter-spacing: -0.02em;
+    }
+    p, li { color: var(--muted); }
+    ul { padding-left: 20px; }
+    .back {
+      display: inline-flex;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="container">
+      <a class="back" href="index.html">← Retour à Signal</a>
+      <section class="card">
+        <h1>Confidentialité</h1>
+        <p>Cette page explique simplement comment Signal utilise les emails collectés via la waitlist.</p>
+
+        <h2>Données collectées</h2>
+        <p>Une seule donnée est demandée : votre adresse email.</p>
+
+        <h2>Usage</h2>
+        <p>Votre email est utilisé uniquement pour :</p>
+        <ul>
+          <li>vous prévenir du lancement de Signal ;</li>
+          <li>vous envoyer la shortlist Data & IA si vous restez inscrit ;</li>
+          <li>répondre à une demande liée à votre inscription.</li>
+        </ul>
+
+        <h2>Pas de revente</h2>
+        <p>Vos données ne sont pas revendues ni utilisées pour d'autres campagnes marketing non liées à Signal.</p>
+
+        <h2>Désinscription</h2>
+        <p>Vous pouvez vous désinscrire à tout moment en répondant à un email ou en écrivant à <a href="mailto:demba.fo95@gmail.com">demba.fo95@gmail.com</a>.</p>
+
+        <h2>Traitement technique</h2>
+        <p>Le formulaire de waitlist utilise FormSubmit pour transmettre les inscriptions par email.</p>
+
+        <h2>Contact</h2>
+        <p>Pour toute question liée à vos données, contactez <a href="mailto:demba.fo95@gmail.com">demba.fo95@gmail.com</a>.</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

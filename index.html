@@ -539,6 +539,12 @@
     font-size: 0.92rem;
   }
 
+  .waitlist-note a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
   .inline-list {
     display: grid;
     gap: 10px;
@@ -672,7 +678,7 @@
         <a href="#how">Sélection</a>
         <a href="#ia">IA à venir</a>
       </nav>
-      <a class="btn btn-primary" href="#waitlist-form" data-track-event="Waitlist CTA Click" data-track-location="header">Recevoir la 1re shortlist</a>
+      <a class="btn btn-primary" href="#waitlist-form" data-track-event="Waitlist CTA Click" data-track-location="header">Recevoir la shortlist</a>
     </div>
   </header>
 
@@ -682,7 +688,7 @@
         <div class="hero-copy">
           <div class="eyebrow">
             <span class="dot" aria-hidden="true"></span>
-            <span><strong>Bêta privée</strong> · France d’abord · 10 offres max / semaine</span>
+            <span><strong>Bêta privée</strong> · Gratuit · France d’abord · 10 offres max / semaine</span>
           </div>
           <h1>Les meilleurs jobs <span class="highlight">Data & IA</span> en France.</h1>
           <p>
@@ -693,7 +699,7 @@
           <form class="hero-form waitlist-form" id="waitlist-form" action="https://formsubmit.co/demba.fo95@gmail.com" method="POST" data-track-form="waitlist">
             <div class="hero-form-head">
               <strong>Reçois la shortlist par email</strong>
-              <span>1 email par semaine max · zéro spam</span>
+              <span>Gratuit · 1 email par semaine max · zéro spam</span>
             </div>
             <input type="hidden" name="_subject" value="Nouvelle inscription waitlist Signal" />
             <input type="hidden" name="_captcha" value="false" />
@@ -701,9 +707,9 @@
             <input type="hidden" name="_next" value="https://demba09.github.io/signal-ia-jobs/thanks.html" />
             <div class="form-row">
               <input type="email" name="email" placeholder="Votre email pro ou perso" required aria-label="Votre email" />
-              <input class="btn btn-primary" type="submit" value="Recevoir la 1re shortlist" />
+              <input class="btn btn-primary" type="submit" value="Recevoir la shortlist" />
             </div>
-            <p class="waitlist-note">La waitlist est visible dès le premier écran. Tu peux aussi voir un aperçu des offres juste à droite.</p>
+            <p class="waitlist-note">Inscription gratuite. Désinscription à tout moment. Vos données sont utilisées uniquement pour vous envoyer Signal. <a href="privacy.html">Confidentialité</a>.</p>
           </form>
           <div class="hero-actions">
             <a class="btn btn-secondary" href="#preview" data-track-event="Preview CTA Click" data-track-location="hero">Voir un aperçu</a>
@@ -715,11 +721,11 @@
           </div>
         </div>
 
-        <aside class="preview-shell" aria-label="Aperçu de la shortlist">
+        <aside class="preview-shell" aria-label="Exemples de la shortlist">
           <div class="preview-top">
             <div>
-              <div class="preview-title">Aperçu de la shortlist</div>
-              <div class="preview-subtitle">Format simple, lisible et utile dès le premier regard.</div>
+              <div class="preview-title">Exemples de la shortlist</div>
+              <div class="preview-subtitle">Exemples du format envoyé par email : rôle, stack, remote et salaire quand disponible.</div>
             </div>
             <div class="small-badge">Hebdo · France</div>
           </div>
@@ -978,8 +984,8 @@
                 Inscris-toi pour être prévenu du lancement et recevoir les premières sélections.
               </p>
               <div class="metric-row inline-list" style="margin-top: 18px;">
+                <span><span class="check">✓</span> inscription gratuite</span>
                 <span><span class="check">✓</span> 1 email par semaine max</span>
-                <span><span class="check">✓</span> 0 spam</span>
                 <span><span class="check">✓</span> priorité aux premiers inscrits</span>
               </div>
             </div>
@@ -987,8 +993,8 @@
             <div class="card" style="padding: 24px;">
               <div class="kicker">Action</div>
               <h3>Le formulaire est juste en haut.</h3>
-              <p class="muted" style="margin-bottom: 16px;">Tu peux rejoindre la waitlist directement depuis le hero, sans scroll inutile.</p>
-              <a class="btn btn-primary" href="#waitlist-form" data-track-event="Waitlist CTA Click" data-track-location="footer">Rejoindre la waitlist</a>
+              <p class="muted" style="margin-bottom: 16px;">Le formulaire est dans le hero, avec une mention claire sur la gratuité et la confidentialité.</p>
+              <a class="btn btn-primary" href="#waitlist-form" data-track-event="Waitlist CTA Click" data-track-location="footer">Recevoir la shortlist</a>
             </div>
           </div>
         </div>
@@ -998,10 +1004,10 @@
 
   <div class="mobile-sticky-cta" aria-label="Accès rapide à la waitlist">
     <div class="mobile-sticky-copy">
-      <strong>Recevoir la shortlist</strong>
+      <strong>Shortlist gratuite</strong>
       <span>1 email par semaine max</span>
     </div>
-    <a class="btn btn-primary mobile-sticky-btn" href="#waitlist-form" data-track-event="Waitlist CTA Click" data-track-location="mobile-sticky">Rejoindre</a>
+    <a class="btn btn-primary mobile-sticky-btn" href="#waitlist-form" data-track-event="Waitlist CTA Click" data-track-location="mobile-sticky">Recevoir</a>
   </div>
 
   <footer class="site-footer">
