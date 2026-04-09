@@ -239,6 +239,36 @@
     margin-top: 26px;
   }
 
+  .hero-form {
+    display: grid;
+    gap: 12px;
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 26px;
+    border: 1px solid var(--line-strong);
+    background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+    box-shadow: var(--shadow);
+    max-width: 560px;
+  }
+
+  .hero-form-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 12px;
+  }
+
+  .hero-form-head strong {
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-form-head span {
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
   .bullet-row,
   .metric-row {
     display: flex;
@@ -589,7 +619,7 @@
         <a href="#how">Sélection</a>
         <a href="#ia">IA à venir</a>
       </nav>
-      <a class="btn btn-primary" href="#waitlist" data-track-event="Waitlist CTA Click" data-track-location="header">Recevoir la 1re shortlist</a>
+      <a class="btn btn-primary" href="#waitlist-form" data-track-event="Waitlist CTA Click" data-track-location="header">Recevoir la 1re shortlist</a>
     </div>
   </header>
 
@@ -607,8 +637,22 @@
             Data Analyst, Data Scientist, Data Engineer, ML Engineer et AI Engineer,
             avec stack, séniorité, remote et salaire quand disponible.
           </p>
+          <form class="hero-form waitlist-form" id="waitlist-form" action="https://formsubmit.co/demba.fo95@gmail.com" method="POST" data-track-form="waitlist">
+            <div class="hero-form-head">
+              <strong>Reçois la shortlist par email</strong>
+              <span>1 email par semaine max · zéro spam</span>
+            </div>
+            <input type="hidden" name="_subject" value="Nouvelle inscription waitlist Signal" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://demba09.github.io/signal-ia-jobs/thanks.html" />
+            <div class="form-row">
+              <input type="email" name="email" placeholder="Votre email pro ou perso" required aria-label="Votre email" />
+              <input class="btn btn-primary" type="submit" value="Recevoir la 1re shortlist" />
+            </div>
+            <p class="waitlist-note">La waitlist est visible dès le premier écran. Tu peux aussi voir un aperçu des offres juste à droite.</p>
+          </form>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#waitlist" data-track-event="Waitlist CTA Click" data-track-location="hero">Recevoir la 1re shortlist</a>
             <a class="btn btn-secondary" href="#preview" data-track-event="Preview CTA Click" data-track-location="hero">Voir un aperçu</a>
           </div>
           <div class="bullet-row" aria-label="Points clés">
@@ -876,9 +920,9 @@
           <div class="waitlist-grid">
             <div>
               <span class="kicker">Bêta privée</span>
-              <h2>Recevez les premières shortlists Data/IA.</h2>
+              <h2>Rejoins la première vague.</h2>
               <p class="section-lead">
-                Rejoignez la liste d’attente pour suivre le lancement et recevoir les premières opportunités vraiment retenues.
+                Inscris-toi pour être prévenu du lancement et recevoir les premières sélections.
               </p>
               <div class="metric-row inline-list" style="margin-top: 18px;">
                 <span><span class="check">✓</span> 1 email par semaine max</span>
@@ -887,19 +931,12 @@
               </div>
             </div>
 
-            <form class="waitlist-form" action="https://formsubmit.co/demba.fo95@gmail.com" method="POST" data-track-form="waitlist">
-              <input type="hidden" name="_subject" value="Nouvelle inscription waitlist Signal" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value="https://demba09.github.io/signal-ia-jobs/thanks.html" />
-              <div class="form-row">
-                <input type="email" name="email" placeholder="Votre email pro ou perso" required aria-label="Votre email" />
-                <input class="btn btn-primary" type="submit" value="Recevoir la 1re shortlist" />
-              </div>
-              <p class="waitlist-note">
-                1 email par semaine max. Zéro spam. Redirection automatique vers la page de confirmation.
-              </p>
-            </form>
+            <div class="card" style="padding: 24px;">
+              <div class="kicker">Action</div>
+              <h3>Le formulaire est juste en haut.</h3>
+              <p class="muted" style="margin-bottom: 16px;">Tu peux rejoindre la waitlist directement depuis le hero, sans scroll inutile.</p>
+              <a class="btn btn-primary" href="#waitlist-form" data-track-event="Waitlist CTA Click" data-track-location="footer">Rejoindre la waitlist</a>
+            </div>
           </div>
         </div>
       </div>
