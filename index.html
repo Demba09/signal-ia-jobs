@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signal — Jobs tech en France, triés à la main</title>
+    <title>Signal — jobs Data & IA en France, sans le bruit</title>
     <meta
       name="description"
-      content="Une shortlist hebdo de jobs tech en France : software, data, IA, product, cloud et cybersécurité. Rejoignez la liste d’attente pour suivre le lancement."
+      content="Signal sélectionne les meilleurs jobs Data & IA en France et envoie une shortlist hebdo courte, avec stack, séniorité, remote et salaire quand disponible."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,14 +24,14 @@
           <div class="brand-mark">S</div>
           <div>
             <p class="brand-name">Signal</p>
-            <p class="brand-subtitle">Jobs tech sélectionnés</p>
+            <p class="brand-subtitle">Jobs Data & IA sélectionnés</p>
           </div>
         </div>
         <nav class="topnav">
           <a href="#problem">Pourquoi</a>
           <a href="#features">Sélection</a>
-          <a href="#market">Marché</a>
-          <a href="recruiter.html">Publier une offre</a>
+          <a href="#ai">IA à venir</a>
+          <a href="recruiter.html">Je recrute</a>
           <a href="#waitlist">Liste d’attente</a>
         </nav>
       </header>
@@ -40,21 +40,29 @@
         <section class="hero-card">
           <div class="hero-copy">
             <div class="hero-badges">
-              <span class="badge badge-soft">Bêta privée • shortlist hebdo</span>
-              <span class="badge">France d’abord • Europe de l’Ouest ensuite</span>
+              <span class="badge badge-soft">Bêta privée</span>
+              <span class="badge">France d’abord</span>
+              <span class="badge">10 offres max / semaine</span>
             </div>
             <h1>
-              Les meilleurs jobs tech en France,
-              <span>triés à la main.</span>
+              Les meilleurs jobs Data & IA en France,
+              <span>filtrés pour éviter le bruit.</span>
             </h1>
             <p class="hero-text">
-              Une shortlist courte de rôles software, data, IA, product, cloud et cybersécurité avec le bon contexte dès le départ : stack, niveau, remote et salaire quand disponible.
+              Recevez chaque semaine une shortlist courte de rôles data, analytics, machine learning et AI engineering,
+              avec stack, séniorité, remote et salaire quand disponible.
             </p>
+            <div class="tag-row" aria-label="Promesses principales">
+              <span>100% Data / IA</span>
+              <span>Stack priorisée</span>
+              <span>0 spam</span>
+            </div>
+
             <div class="signup-card">
               <div class="signup-card-head">
                 <div>
                   <p class="card-kicker">Liste d’attente</p>
-                  <h3 id="waitlist">Recevez la shortlist du lancement.</h3>
+                  <h3 id="waitlist">Recevez la 1re shortlist Data/IA.</h3>
                 </div>
                 <span class="chip">Accès anticipé</span>
               </div>
@@ -64,19 +72,20 @@
                 method="POST"
                 data-track-form="waitlist"
               >
-                <input type="hidden" name="_subject" value="Nouvelle inscription — Signal" />
+                <input type="hidden" name="_subject" value="Nouvelle inscription Data/IA — Signal" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
                 <input type="hidden" name="_next" value="https://demba09.github.io/signal-ia-jobs/thanks.html" />
                 <input type="email" name="email" placeholder="votre@email.com" aria-label="Adresse email" required />
                 <button class="button primary" type="submit" data-track-event="Waitlist CTA Click" data-track-location="hero">
-                  Rejoindre la liste d’attente
+                  Recevoir la 1re shortlist Data/IA
                 </button>
               </form>
               <p class="helper-text">1 email par semaine max. Zéro spam. Les inscriptions arrivent dans la boîte du projet via FormSubmit.</p>
             </div>
+
             <div class="cta-row">
-              <a class="button secondary" href="recruiter.html">Je recrute</a>
+              <a class="button secondary" href="recruiter.html">Je recrute en Data/IA</a>
             </div>
           </div>
 
@@ -84,16 +93,16 @@
             <div class="dashboard-card floating-one">
               <div class="dashboard-topline">
                 <span class="dot"></span>
-                <span>Aperçu du positionnement</span>
+                <span>Aperçu de la shortlist</span>
               </div>
               <div class="metric-stack">
                 <div>
-                  <p class="metric-label">Marché initial</p>
-                  <p class="metric-value">France</p>
+                  <p class="metric-label">Cadence</p>
+                  <p class="metric-value">Hebdo</p>
                 </div>
                 <div>
-                  <p class="metric-label">Formats</p>
-                  <p class="metric-value">CDI • Remote</p>
+                  <p class="metric-label">Focus</p>
+                  <p class="metric-value">Data / IA</p>
                 </div>
               </div>
             </div>
@@ -101,67 +110,67 @@
             <div class="job-card large">
               <div class="job-card-head">
                 <div>
-                  <p class="job-company">Exemple de fiche • Paris / Remote</p>
-                  <h3>Senior Backend Engineer</h3>
+                  <p class="job-company">Exemple de shortlist • Paris / hybride</p>
+                  <h3>Senior Data Engineer</h3>
                 </div>
                 <span class="chip">Exemple</span>
               </div>
-              <p class="job-meta">TypeScript • Node.js • AWS • 60–80k€</p>
+              <p class="job-meta">Python • dbt • BigQuery • Airflow • 70–85k€</p>
               <div class="tag-row">
                 <span>CDI</span>
-                <span>Série A</span>
-                <span>Remote partiel</span>
+                <span>Scale-up</span>
+                <span>Hybride</span>
               </div>
             </div>
 
             <div class="job-list">
               <article class="job-card small">
-                <p class="job-company">Exemple de fiche • Lyon</p>
-                <h4>Data Engineer</h4>
-                <p class="job-meta">dbt • Python • Snowflake • Hybride</p>
+                <p class="job-company">Exemple de shortlist • Remote France</p>
+                <h4>ML Engineer</h4>
+                <p class="job-meta">Python • PyTorch • AWS • LLM tooling • 65–90k€</p>
               </article>
               <article class="job-card small muted">
-                <p class="job-company">Exemple de fiche • Remote Europe</p>
-                <h4>Product Engineer</h4>
-                <p class="job-meta">React • Product • B2B SaaS</p>
+                <p class="job-company">Exemple de shortlist • Lyon / remote partiel</p>
+                <h4>Analytics Engineer</h4>
+                <p class="job-meta">SQL • dbt • Looker • Snowflake • 55–70k€</p>
               </article>
             </div>
           </div>
         </section>
 
         <section class="logo-strip" aria-label="Repères de sélection">
-          <p>Sélection manuelle</p>
-          <p>Stack et niveau lisibles</p>
+          <p>10 offres max / semaine</p>
+          <p>100% Data / IA</p>
+          <p>Salaire et stack priorisés</p>
           <p>France d’abord</p>
           <p>Remote / hybride inclus</p>
-          <p>Europe de l’Ouest ensuite</p>
         </section>
 
         <section class="section-grid" id="problem">
           <div class="section-heading">
             <span class="eyebrow">Pourquoi</span>
-            <h2>Les bons jobs tech sont dispersés, mal filtrés et pénibles à comparer.</h2>
+            <h2>Les bons jobs Data & IA sont noyés dans trop de bruit.</h2>
           </div>
           <div class="problem-grid">
             <article class="info-card">
-              <p class="card-kicker">Trop de bruit</p>
-              <h3>LinkedIn et les boards généralistes noient le signal.</h3>
+              <p class="card-kicker">Trop de mélange</p>
+              <h3>Les boards généralistes mélangent tout.</h3>
               <p>
-                Trop d’offres peu pertinentes, trop peu de contexte, trop de temps perdu à trier.
+                Software, product, cloud, data, IA : on perd vite du temps à trier des rôles qui ne correspondent pas au bon angle.
               </p>
             </article>
             <article class="info-card">
-              <p class="card-kicker">Infos manquantes</p>
-              <h3>Salaire, stack, remote et séniorité sont souvent flous.</h3>
+              <p class="card-kicker">Trop peu de contexte</p>
+              <h3>Salaire, stack, remote et séniorité restent flous.</h3>
               <p>
-                Résultat : on clique beaucoup, on apprend peu, et les comparaisons deviennent inefficaces.
+                Résultat : on clique beaucoup, on compare mal, et on finit par revoir les mêmes offres encore et encore.
               </p>
             </article>
             <article class="info-card accent">
               <p class="card-kicker">Notre approche</p>
-              <h3>Une shortlist claire plutôt qu’un catalogue infini.</h3>
+              <h3>Une shortlist courte plutôt qu’un catalogue infini.</h3>
               <p>
-                Signal met en avant une sélection manuelle de rôles tech réellement intéressants, avec un angle France d’abord.
+                Signal sélectionne peu d’offres, mais garde seulement celles qui sont vraiment utiles pour les profils Data & IA.
               </p>
             </article>
           </div>
@@ -172,10 +181,10 @@
             <span class="eyebrow">Sélection</span>
             <h2>Ce que vous recevrez au lancement.</h2>
             <ul class="feature-list">
-              <li>Une shortlist régulière de jobs tech vraiment intéressants.</li>
-              <li>Des fiches plus lisibles : stack, niveau, remote, pays et salaire quand disponible.</li>
+              <li>Une shortlist hebdo courte de rôles Data & IA réellement intéressants.</li>
+              <li>Des fiches plus lisibles : stack, niveau, remote, localisation et salaire quand disponible.</li>
               <li>Un focus initial sur la France pour garder un signal fort.</li>
-              <li>Une extension progressive vers l’Europe de l’Ouest une fois la base solide.</li>
+              <li>Une extension progressive vers les rôles remote et l’Europe de l’Ouest ensuite.</li>
             </ul>
           </div>
 
@@ -183,42 +192,47 @@
             <article class="mini-card">
               <p class="card-kicker">Moins de bruit</p>
               <h3>Vous gagnez du temps.</h3>
-              <p>Le but n’est pas d’agréger tout le marché, mais d’aider à repérer les bons rôles plus vite.</p>
+              <p>Signal ne cherche pas à montrer tout le marché, seulement ce qui mérite vraiment votre attention.</p>
             </article>
             <article class="mini-card">
               <p class="card-kicker">Plus de clarté</p>
               <h3>Vous comparez mieux.</h3>
-              <p>Le bon niveau d’info au bon endroit pour décider si une offre vaut vraiment votre attention.</p>
+              <p>Le bon niveau d’info au bon endroit pour décider vite si une offre vaut le coup.</p>
             </article>
             <article class="mini-card">
-              <p class="card-kicker">Accès anticipé</p>
-              <h3>Vous faites partie des premiers.</h3>
-              <p>La liste d’attente sert à suivre le lancement, recevoir les premières sélections et guider le produit.</p>
+              <p class="card-kicker">Aperçu réel</p>
+              <h3>Vous voyez la shortlist avant l’ouverture.</h3>
+              <p>Les premiers abonnés reçoivent les sélections de lancement et aident à façonner la suite.</p>
             </article>
           </div>
         </section>
 
-        <section class="proof-grid" id="market">
+        <section class="proof-grid" id="ai">
           <article class="proof-card large-proof">
-            <span class="eyebrow">Marché</span>
-            <h2>France d’abord. Europe de l’Ouest ensuite.</h2>
+            <span class="eyebrow">IA à venir</span>
+            <h2>Bientôt : score CV, matching et optimisation de candidature.</h2>
             <p>
-              Le lancement se concentre sur le marché français pour garder un positionnement simple et une sélection utile.
-              L’expansion naturelle viendra ensuite vers les rôles remote et les marchés tech voisins d’Europe de l’Ouest.
+              Signal démarre par une shortlist de qualité. Ensuite, l’IA aidera à mieux cibler les rôles,
+              aligner le CV et prioriser les candidatures les plus pertinentes.
             </p>
+            <ul class="feature-list">
+              <li>Score CV vs offre pour aller plus vite.</li>
+              <li>Optimisation du CV pour les rôles Data & IA.</li>
+              <li>Matching intelligent entre profil et opportunités.</li>
+            </ul>
           </article>
           <article class="proof-card stats">
             <div>
-              <p class="stat-value">France</p>
-              <p class="stat-label">marché de départ</p>
+              <p class="stat-value">Étape 1</p>
+              <p class="stat-label">shortlist Data / IA</p>
             </div>
             <div>
-              <p class="stat-value">Tech</p>
-              <p class="stat-label">software, data, product, cloud, security</p>
+              <p class="stat-value">Étape 2</p>
+              <p class="stat-label">matching intelligent</p>
             </div>
             <div>
-              <p class="stat-value">Clair</p>
-              <p class="stat-label">stack, niveau, remote et salaire quand disponible</p>
+              <p class="stat-value">Étape 3</p>
+              <p class="stat-label">optimisation CV & priorisation</p>
             </div>
           </article>
         </section>
@@ -226,17 +240,17 @@
         <section class="cta-block" id="cta">
           <div>
             <span class="eyebrow">Bêta privée</span>
-            <h2>Recevez une shortlist utile dès l’ouverture.</h2>
+            <h2>Recevez les premières shortlists Data/IA.</h2>
             <p>
-              Rejoignez la liste d’attente pour suivre le lancement du board et recevoir les premières opportunités tech vraiment retenues.
+              Rejoignez la liste d’attente pour suivre le lancement et recevoir les premières opportunités vraiment retenues.
             </p>
           </div>
           <div class="cta-actions">
             <a class="button primary" data-track-event="Waitlist CTA Click" data-track-location="footer" href="#waitlist">
-              Rejoindre la liste d’attente
+              Recevoir la 1re shortlist Data/IA
             </a>
             <a class="button ghost" data-track-event="Recruiter CTA Click" data-track-location="footer" href="recruiter.html">
-              Je recrute
+              Je recrute en Data/IA
             </a>
           </div>
         </section>
