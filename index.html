@@ -481,6 +481,44 @@
     margin-bottom: 4px;
   }
 
+  .company-strip {
+    margin-top: 10px;
+  }
+
+  .company-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 6px;
+  }
+
+  .company-card {
+    display: grid;
+    gap: 8px;
+    justify-items: center;
+    text-align: center;
+    padding: 16px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    min-height: 108px;
+  }
+
+  .company-card img {
+    width: 100%;
+    max-width: 126px;
+    height: 30px;
+    object-fit: contain;
+    filter: grayscale(1) contrast(0.95);
+    opacity: 0.92;
+  }
+
+  .company-card span {
+    font-size: 0.88rem;
+    color: var(--muted);
+    letter-spacing: -0.01em;
+  }
+
   .audience-card {
     text-align: center;
     padding: 16px;
@@ -599,6 +637,7 @@
 
     .hero { padding-top: 52px; }
     h1 { max-width: 14ch; }
+    .company-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
 
   @media (max-width: 760px) {
@@ -626,6 +665,7 @@
       flex-direction: column;
       align-items: flex-start;
     }
+    .company-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .mobile-sticky-cta {
       position: fixed;
       left: 12px;
@@ -709,7 +749,7 @@
               <input type="email" name="email" placeholder="Votre email pro ou perso" required aria-label="Votre email" />
               <input class="btn btn-primary" type="submit" value="Recevoir la shortlist" />
             </div>
-            <p class="waitlist-note">Inscription gratuite. Désinscription à tout moment. Vos données sont utilisées uniquement pour vous envoyer Signal. <a href="privacy.html">Confidentialité</a>.</p>
+            <p class="waitlist-note">Inscription gratuite. Désinscription à tout moment. Vos données sont utilisées uniquement pour vous envoyer Signal.</p>
           </form>
           <div class="hero-actions">
             <a class="btn btn-secondary" href="#preview" data-track-event="Preview CTA Click" data-track-location="hero">Voir un aperçu</a>
@@ -794,6 +834,42 @@
         <div class="stat">
           <strong>France</strong>
           <span class="muted">marché de départ, avec remote et hybride inclus</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container company-strip">
+        <div class="section-head">
+          <span class="kicker">Entreprises pertinentes</span>
+          <h2>Des entreprises Data & IA qui comptent en France.</h2>
+          <p class="section-lead">Exemples de sociétés connues pour recruter des profils Data / IA. Logos affichés à titre indicatif, sans affiliation.</p>
+        </div>
+        <div class="company-grid" aria-label="Exemples d'entreprises pertinentes">
+          <div class="company-card">
+            <img src="https://logo.clearbit.com/alan.com?size=128" alt="Logo Alan" />
+            <span>Alan</span>
+          </div>
+          <div class="company-card">
+            <img src="https://logo.clearbit.com/qonto.com?size=128" alt="Logo Qonto" />
+            <span>Qonto</span>
+          </div>
+          <div class="company-card">
+            <img src="https://logo.clearbit.com/doctolib.fr?size=128" alt="Logo Doctolib" />
+            <span>Doctolib</span>
+          </div>
+          <div class="company-card">
+            <img src="https://logo.clearbit.com/blablacar.com?size=128" alt="Logo BlaBlaCar" />
+            <span>BlaBlaCar</span>
+          </div>
+          <div class="company-card">
+            <img src="https://logo.clearbit.com/backmarket.com?size=128" alt="Logo Back Market" />
+            <span>Back Market</span>
+          </div>
+          <div class="company-card">
+            <img src="https://logo.clearbit.com/mistral.ai?size=128" alt="Logo Mistral AI" />
+            <span>Mistral AI</span>
+          </div>
         </div>
       </div>
     </section>
