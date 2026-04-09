@@ -504,14 +504,26 @@
     min-height: 108px;
   }
 
-  .company-card img {
-    width: 100%;
-    max-width: 126px;
-    height: 30px;
-    object-fit: contain;
-    filter: grayscale(1) contrast(0.95);
-    opacity: 0.92;
+  .company-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    font-size: 0.96rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    color: #0f172a;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
   }
+
+  .company-mark-alan { background: linear-gradient(135deg, #dbeafe, #bfdbfe); color: #1d4ed8; }
+  .company-mark-qonto { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #15803d; }
+  .company-mark-doctolib { background: linear-gradient(135deg, #e0f2fe, #bae6fd); color: #0369a1; }
+  .company-mark-blablacar { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #b45309; }
+  .company-mark-backmarket { background: linear-gradient(135deg, #dcfce7, #86efac); color: #166534; }
+  .company-mark-mistral { background: linear-gradient(135deg, #f3e8ff, #ddd6fe); color: #7c3aed; }
 
   .company-card span {
     font-size: 0.88rem;
@@ -847,27 +859,27 @@
         </div>
         <div class="company-grid" aria-label="Exemples d'entreprises pertinentes">
           <div class="company-card">
-            <img src="https://logo.clearbit.com/alan.com?size=128" alt="Logo Alan" />
+            <div class="company-mark company-mark-alan" aria-hidden="true">AL</div>
             <span>Alan</span>
           </div>
           <div class="company-card">
-            <img src="https://logo.clearbit.com/qonto.com?size=128" alt="Logo Qonto" />
+            <div class="company-mark company-mark-qonto" aria-hidden="true">QO</div>
             <span>Qonto</span>
           </div>
           <div class="company-card">
-            <img src="https://logo.clearbit.com/doctolib.fr?size=128" alt="Logo Doctolib" />
+            <div class="company-mark company-mark-doctolib" aria-hidden="true">DO</div>
             <span>Doctolib</span>
           </div>
           <div class="company-card">
-            <img src="https://logo.clearbit.com/blablacar.com?size=128" alt="Logo BlaBlaCar" />
+            <div class="company-mark company-mark-blablacar" aria-hidden="true">BB</div>
             <span>BlaBlaCar</span>
           </div>
           <div class="company-card">
-            <img src="https://logo.clearbit.com/backmarket.com?size=128" alt="Logo Back Market" />
+            <div class="company-mark company-mark-backmarket" aria-hidden="true">BM</div>
             <span>Back Market</span>
           </div>
           <div class="company-card">
-            <img src="https://logo.clearbit.com/mistral.ai?size=128" alt="Logo Mistral AI" />
+            <div class="company-mark company-mark-mistral" aria-hidden="true">MI</div>
             <span>Mistral AI</span>
           </div>
         </div>
