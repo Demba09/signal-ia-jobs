@@ -504,26 +504,14 @@
     min-height: 108px;
   }
 
-  .company-mark {
-    width: 56px;
-    height: 56px;
-    border-radius: 18px;
-    display: grid;
-    place-items: center;
-    font-size: 0.96rem;
-    font-weight: 800;
-    letter-spacing: -0.05em;
-    color: #0f172a;
-    border: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  .company-card img {
+    display: block;
+    height: 32px;
+    width: auto;
+    max-width: 128px;
+    object-fit: contain;
+    filter: none;
   }
-
-  .company-mark-alan { background: linear-gradient(135deg, #dbeafe, #bfdbfe); color: #1d4ed8; }
-  .company-mark-qonto { background: linear-gradient(135deg, #dcfce7, #bbf7d0); color: #15803d; }
-  .company-mark-doctolib { background: linear-gradient(135deg, #e0f2fe, #bae6fd); color: #0369a1; }
-  .company-mark-blablacar { background: linear-gradient(135deg, #fef3c7, #fde68a); color: #b45309; }
-  .company-mark-backmarket { background: linear-gradient(135deg, #dcfce7, #86efac); color: #166534; }
-  .company-mark-mistral { background: linear-gradient(135deg, #f3e8ff, #ddd6fe); color: #7c3aed; }
 
   .company-card span {
     font-size: 0.88rem;
@@ -855,31 +843,31 @@
         <div class="section-head">
           <span class="kicker">Entreprises pertinentes</span>
           <h2>Des entreprises Data & IA qui comptent en France.</h2>
-          <p class="section-lead">Exemples de sociétés connues pour recruter des profils Data / IA. Logos affichés à titre indicatif, sans affiliation.</p>
+          <p class="section-lead">Exemples de sociétés connues pour recruter des profils Data / IA. Logos officiels affichés à titre indicatif, sans affiliation.</p>
         </div>
         <div class="company-grid" aria-label="Exemples d'entreprises pertinentes">
           <div class="company-card">
-            <div class="company-mark company-mark-alan" aria-hidden="true">AL</div>
+            <img src="assets/company-logos/alan.png" alt="Alan" loading="lazy" decoding="async" />
             <span>Alan</span>
           </div>
           <div class="company-card">
-            <div class="company-mark company-mark-qonto" aria-hidden="true">QO</div>
+            <img src="assets/company-logos/qonto.svg" alt="Qonto" loading="lazy" decoding="async" />
             <span>Qonto</span>
           </div>
           <div class="company-card">
-            <div class="company-mark company-mark-doctolib" aria-hidden="true">DO</div>
+            <img src="assets/company-logos/doctolib.png" alt="Doctolib" loading="lazy" decoding="async" />
             <span>Doctolib</span>
           </div>
           <div class="company-card">
-            <div class="company-mark company-mark-blablacar" aria-hidden="true">BB</div>
+            <img src="assets/company-logos/blablacar.svg" alt="BlaBlaCar" loading="lazy" decoding="async" />
             <span>BlaBlaCar</span>
           </div>
           <div class="company-card">
-            <div class="company-mark company-mark-backmarket" aria-hidden="true">BM</div>
+            <img src="assets/company-logos/backmarket.svg" alt="Back Market" loading="lazy" decoding="async" />
             <span>Back Market</span>
           </div>
           <div class="company-card">
-            <div class="company-mark company-mark-mistral" aria-hidden="true">MI</div>
+            <img src="assets/company-logos/mistral.svg" alt="Mistral AI" loading="lazy" decoding="async" />
             <span>Mistral AI</span>
           </div>
         </div>
