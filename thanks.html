@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Merci — Signal jobs Data & IA</title>
     <meta name="description" content="Merci pour votre inscription à la waitlist Signal jobs Data & IA." />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f7fb" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1020" />
     <meta name="robots" content="noindex,nofollow" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,39 +17,63 @@
     />
     <script defer data-domain="demba09.github.io" src="https://plausible.io/js/script.js"></script>
     <style>
-      :root { --bg:#f5f5f2; --text:#101828; --muted:#667085; --accent:#4454ff; }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: grid;
-        place-items: center;
-        font-family: Inter, system-ui, sans-serif;
-        color: var(--text);
-        background: linear-gradient(180deg, #fafaf8 0%, #f3f3f0 100%);
-      }
-      .card {
-        width: min(92vw, 760px);
-        padding: 32px;
-        border-radius: 28px;
-        background: rgba(255,255,255,0.86);
-        border: 1px solid rgba(15, 23, 42, 0.08);
-        box-shadow: 0 24px 60px rgba(16,24,40,0.1);
-      }
-      h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.05em; }
-      p { color: var(--muted); line-height: 1.7; font-size: 1.05rem; }
-      a {
-        display: inline-block;
-        margin-top: 14px;
-        color: white;
-        text-decoration: none;
-        background: linear-gradient(135deg, #111827 0%, #4454ff 90%);
-        padding: 14px 18px;
-        border-radius: 16px;
-        font-weight: 700;
-      }
-      .small { font-size: .92rem; margin-top: 18px; }
-    </style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f5f7fb;
+    --bg-alt: #edf1f9;
+    --surface: rgba(255, 255, 255, 0.84);
+    --text: #0f172a;
+    --muted: #5b6475;
+    --accent: #4454ff;
+    --line: rgba(15, 23, 42, 0.08);
+    --shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1020;
+      --bg-alt: #0d1326;
+      --surface: rgba(255, 255, 255, 0.08);
+      --text: #f5f7fb;
+      --muted: #b5bfd4;
+      --accent: #5ea7ff;
+      --line: rgba(255, 255, 255, 0.09);
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: Inter, system-ui, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(94, 167, 255, 0.08), transparent 32%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  }
+  .card {
+    width: min(92vw, 760px);
+    padding: 32px;
+    border-radius: 28px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+  h1 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3.5rem); letter-spacing: -0.05em; }
+  p { color: var(--muted); line-height: 1.7; font-size: 1.05rem; }
+  a {
+    display: inline-block;
+    margin-top: 14px;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(135deg, #111827 0%, var(--accent) 90%);
+    padding: 14px 18px;
+    border-radius: 16px;
+    font-weight: 700;
+  }
+  .small { font-size: .92rem; margin-top: 18px; }
+</style>
   </head>
   <body>
     <main class="card">
