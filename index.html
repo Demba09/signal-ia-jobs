@@ -1,284 +1,932 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signal — jobs Data & IA en France, sans le bruit</title>
-    <meta
-      name="description"
-      content="Signal sélectionne les meilleurs jobs Data & IA en France et envoie une shortlist hebdo courte, avec stack, séniorité, remote et salaire quand disponible."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <script defer data-domain="demba09.github.io" src="https://plausible.io/js/script.js"></script>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="site-shell">
-      <header class="topbar">
-        <div class="brand-lockup">
-          <div class="brand-mark">S</div>
-          <div>
-            <p class="brand-name">Signal</p>
-            <p class="brand-subtitle">Jobs Data & IA sélectionnés</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal — Jobs Data & IA en France, sans le bruit</title>
+  <meta
+    name="description"
+    content="Recevez une shortlist courte de jobs Data & IA en France : Data Analyst, Data Scientist, Data Engineer, ML Engineer et AI Engineer."
+  />
+  <meta property="og:title" content="Signal — Jobs Data & IA en France, sans le bruit" />
+  <meta
+    property="og:description"
+    content="Une shortlist claire de rôles Data & IA avec stack, séniorité, remote et salaire quand disponible."
+  />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0b1020" />
+  <script defer data-domain="demba09.github.io" src="https://plausible.io/js/script.js"></script>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #11182d;
+      --panel: rgba(255, 255, 255, 0.04);
+      --panel-strong: rgba(255, 255, 255, 0.07);
+      --line: rgba(255, 255, 255, 0.09);
+      --text: #f5f7fb;
+      --muted: #b5bfd4;
+      --accent: #5ea7ff;
+      --accent-2: #8c7bff;
+      --success: #82d9aa;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(94, 167, 255, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(140, 123, 255, 0.14), transparent 24%),
+        linear-gradient(180deg, #0b1020 0%, #0d1326 35%, #0b1020 100%);
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(11, 16, 32, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #08111f;
+      box-shadow: 0 10px 30px rgba(94, 167, 255, 0.28);
+      font-weight: 800;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav a:hover { color: var(--text); }
+
+    .btn,
+    button,
+    input[type="submit"] {
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      font: inherit;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+    }
+
+    .btn:hover,
+    button:hover,
+    input[type="submit"]:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 22px;
+      background: linear-gradient(135deg, var(--accent), #76b7ff);
+      color: #07111d;
+      font-weight: 700;
+      box-shadow: 0 16px 36px rgba(94, 167, 255, 0.24);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 72px 0 30px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.03);
+      font-size: 0.93rem;
+      margin-bottom: 18px;
+    }
+
+    .eyebrow strong { color: var(--text); }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      font-size: clamp(2.5rem, 5.2vw, 4.6rem);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      max-width: 12ch;
+    }
+
+    .hero-copy p {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 60ch;
+    }
+
+    .highlight {
+      color: #9fd0ff;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .bullet-row,
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: #d5def0;
+      font-size: 0.92rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 6px rgba(130, 217, 170, 0.08);
+    }
+
+    .preview-shell {
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .preview-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding: 8px 8px 0;
+    }
+
+    .preview-title {
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .preview-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .small-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(94, 167, 255, 0.12);
+      color: #b9d9ff;
+      border: 1px solid rgba(94, 167, 255, 0.18);
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .job-card {
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      padding: 18px;
+    }
+
+    .job-card + .job-card {
+      margin-top: 12px;
+    }
+
+    .job-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+
+    .job-role {
+      font-size: 1.06rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .job-meta,
+    .section-lead,
+    .muted {
+      color: var(--muted);
+    }
+
+    .job-salary {
+      font-weight: 700;
+      color: #d6edff;
+      white-space: nowrap;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 31px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+      color: #dde4f2;
+      font-size: 0.88rem;
+    }
+
+    .section {
+      padding: 48px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .section-lead {
+      font-size: 1.04rem;
+      max-width: 62ch;
+    }
+
+    .grid-3,
+    .grid-2,
+    .audience-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .audience-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+    .card {
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: var(--panel);
+      padding: 22px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    .card h3 {
+      font-size: 1.18rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .kicker {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-size: 0.83rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #9fc8ff;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: rgba(94, 167, 255, 0.1);
+      border: 1px solid rgba(94, 167, 255, 0.18);
+      margin-bottom: 14px;
+      color: #d6ebff;
+      font-weight: 700;
+    }
+
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 6px;
+    }
+
+    .stat {
+      padding: 18px 20px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.45rem;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+
+    .audience-card {
+      text-align: center;
+      padding: 16px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: #deebff;
+      font-weight: 600;
+    }
+
+    .waitlist {
+      padding: 36px;
+      border-radius: 32px;
+      border: 1px solid rgba(94, 167, 255, 0.2);
+      background:
+        radial-gradient(circle at top right, rgba(94,167,255,0.15), transparent 28%),
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow);
+    }
+
+    .waitlist-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .waitlist-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    input[type="email"] {
+      flex: 1;
+      min-height: 54px;
+      padding: 0 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(10, 16, 31, 0.85);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    input[type="email"]::placeholder { color: #8c96ab; }
+    input[type="email"]:focus {
+      border-color: rgba(94, 167, 255, 0.55);
+      box-shadow: 0 0 0 4px rgba(94, 167, 255, 0.12);
+    }
+
+    .waitlist-note {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .inline-list {
+      display: grid;
+      gap: 10px;
+      color: #deebff;
+    }
+
+    .inline-list span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .inline-list .check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(130, 217, 170, 0.12);
+      color: var(--success);
+      font-size: 0.9rem;
+      flex: 0 0 auto;
+    }
+
+    .site-footer {
+      padding: 28px 0 46px;
+      color: #93a0b8;
+      font-size: 0.92rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .waitlist-grid,
+      .grid-3,
+      .audience-grid,
+      .grid-2,
+      .stat-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      h1 {
+        max-width: 14ch;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(calc(100% - 24px), var(--max));
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .header-inner {
+        min-height: 68px;
+      }
+
+      .hero-actions,
+      .form-row {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary,
+      input[type="submit"] {
+        width: 100%;
+      }
+
+      .waitlist,
+      .preview-shell,
+      .card,
+      .job-card {
+        border-radius: 22px;
+      }
+
+      .section {
+        padding: 34px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Signal accueil">
+        <span class="brand-mark">S</span>
+        <span>Signal</span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#why">Pourquoi</a>
+        <a href="#preview">Aperçu</a>
+        <a href="#how">Sélection</a>
+        <a href="#ia">IA à venir</a>
+      </nav>
+      <a class="btn btn-primary" href="#waitlist" data-track-event="Waitlist CTA Click" data-track-location="header">Recevoir la 1re shortlist</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="dot" aria-hidden="true"></span>
+            <span><strong>Bêta privée</strong> · France d’abord · 10 offres max / semaine</span>
+          </div>
+          <h1>Les meilleurs jobs <span class="highlight">Data & IA</span> en France.</h1>
+          <p>
+            Une shortlist claire pour éviter le bruit des job boards généralistes.
+            Data Analyst, Data Scientist, Data Engineer, ML Engineer et AI Engineer,
+            avec stack, séniorité, remote et salaire quand disponible.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#waitlist" data-track-event="Waitlist CTA Click" data-track-location="hero">Recevoir la 1re shortlist</a>
+            <a class="btn btn-secondary" href="#preview" data-track-event="Preview CTA Click" data-track-location="hero">Voir un aperçu</a>
+          </div>
+          <div class="bullet-row" aria-label="Points clés">
+            <div class="pill">100% Data / IA</div>
+            <div class="pill">Stack et salaire priorisés</div>
+            <div class="pill">Remote / hybride inclus</div>
           </div>
         </div>
-        <nav class="topnav">
-          <a href="#problem">Pourquoi</a>
-          <a href="#features">Sélection</a>
-          <a href="#ai">IA à venir</a>
-          <a href="recruiter.html">Je recrute</a>
-          <a href="#waitlist">Liste d’attente</a>
-        </nav>
-      </header>
 
-      <main>
-        <section class="hero-card">
-          <div class="hero-copy">
-            <div class="hero-badges">
-              <span class="badge badge-soft">Bêta privée</span>
-              <span class="badge">France d’abord</span>
-              <span class="badge">10 offres max / semaine</span>
-            </div>
-            <h1>
-              Les meilleurs jobs Data & IA en France,
-              <span>filtrés pour éviter le bruit.</span>
-            </h1>
-            <p class="hero-text">
-              Recevez chaque semaine une shortlist courte de rôles data, analytics, machine learning et AI engineering,
-              avec stack, séniorité, remote et salaire quand disponible.
-            </p>
-            <div class="tag-row" aria-label="Promesses principales">
-              <span>100% Data / IA</span>
-              <span>Stack priorisée</span>
-              <span>0 spam</span>
-            </div>
-
-            <div class="signup-card">
-              <div class="signup-card-head">
-                <div>
-                  <p class="card-kicker">Liste d’attente</p>
-                  <h3 id="waitlist">Recevez la 1re shortlist Data/IA.</h3>
-                </div>
-                <span class="chip">Accès anticipé</span>
-              </div>
-              <form
-                class="signup-form"
-                action="https://formsubmit.co/demba.fo95@gmail.com"
-                method="POST"
-                data-track-form="waitlist"
-              >
-                <input type="hidden" name="_subject" value="Nouvelle inscription Data/IA — Signal" />
-                <input type="hidden" name="_captcha" value="false" />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value="https://demba09.github.io/signal-ia-jobs/thanks.html" />
-                <input type="email" name="email" placeholder="votre@email.com" aria-label="Adresse email" required />
-                <button class="button primary" type="submit" data-track-event="Waitlist CTA Click" data-track-location="hero">
-                  Recevoir la 1re shortlist Data/IA
-                </button>
-              </form>
-              <p class="helper-text">1 email par semaine max. Zéro spam. Les inscriptions arrivent dans la boîte du projet via FormSubmit.</p>
-            </div>
-
-            <div class="cta-row">
-              <a class="button secondary" href="recruiter.html">Je recrute en Data/IA</a>
-            </div>
-          </div>
-
-          <div class="hero-panel">
-            <div class="dashboard-card floating-one">
-              <div class="dashboard-topline">
-                <span class="dot"></span>
-                <span>Aperçu de la shortlist</span>
-              </div>
-              <div class="metric-stack">
-                <div>
-                  <p class="metric-label">Cadence</p>
-                  <p class="metric-value">Hebdo</p>
-                </div>
-                <div>
-                  <p class="metric-label">Focus</p>
-                  <p class="metric-value">Data / IA</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="job-card large">
-              <div class="job-card-head">
-                <div>
-                  <p class="job-company">Exemple de shortlist • Paris / hybride</p>
-                  <h3>Senior Data Engineer</h3>
-                </div>
-                <span class="chip">Exemple</span>
-              </div>
-              <p class="job-meta">Python • dbt • BigQuery • Airflow • 70–85k€</p>
-              <div class="tag-row">
-                <span>CDI</span>
-                <span>Scale-up</span>
-                <span>Hybride</span>
-              </div>
-            </div>
-
-            <div class="job-list">
-              <article class="job-card small">
-                <p class="job-company">Exemple de shortlist • Remote France</p>
-                <h4>ML Engineer</h4>
-                <p class="job-meta">Python • PyTorch • AWS • LLM tooling • 65–90k€</p>
-              </article>
-              <article class="job-card small muted">
-                <p class="job-company">Exemple de shortlist • Lyon / remote partiel</p>
-                <h4>Analytics Engineer</h4>
-                <p class="job-meta">SQL • dbt • Looker • Snowflake • 55–70k€</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="logo-strip" aria-label="Repères de sélection">
-          <p>10 offres max / semaine</p>
-          <p>100% Data / IA</p>
-          <p>Salaire et stack priorisés</p>
-          <p>France d’abord</p>
-          <p>Remote / hybride inclus</p>
-        </section>
-
-        <section class="section-grid" id="problem">
-          <div class="section-heading">
-            <span class="eyebrow">Pourquoi</span>
-            <h2>Les bons jobs Data & IA sont noyés dans trop de bruit.</h2>
-          </div>
-          <div class="problem-grid">
-            <article class="info-card">
-              <p class="card-kicker">Trop de mélange</p>
-              <h3>Les boards généralistes mélangent tout.</h3>
-              <p>
-                Software, product, cloud, data, IA : on perd vite du temps à trier des rôles qui ne correspondent pas au bon angle.
-              </p>
-            </article>
-            <article class="info-card">
-              <p class="card-kicker">Trop peu de contexte</p>
-              <h3>Salaire, stack, remote et séniorité restent flous.</h3>
-              <p>
-                Résultat : on clique beaucoup, on compare mal, et on finit par revoir les mêmes offres encore et encore.
-              </p>
-            </article>
-            <article class="info-card accent">
-              <p class="card-kicker">Notre approche</p>
-              <h3>Une shortlist courte plutôt qu’un catalogue infini.</h3>
-              <p>
-                Signal sélectionne peu d’offres, mais garde seulement celles qui sont vraiment utiles pour les profils Data & IA.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="feature-layout" id="features">
-          <div class="feature-panel dark">
-            <span class="eyebrow">Sélection</span>
-            <h2>Ce que vous recevrez au lancement.</h2>
-            <ul class="feature-list">
-              <li>Une shortlist hebdo courte de rôles Data & IA réellement intéressants.</li>
-              <li>Des fiches plus lisibles : stack, niveau, remote, localisation et salaire quand disponible.</li>
-              <li>Un focus initial sur la France pour garder un signal fort.</li>
-              <li>Une extension progressive vers les rôles remote et l’Europe de l’Ouest ensuite.</li>
-            </ul>
-          </div>
-
-          <div class="feature-stack">
-            <article class="mini-card">
-              <p class="card-kicker">Moins de bruit</p>
-              <h3>Vous gagnez du temps.</h3>
-              <p>Signal ne cherche pas à montrer tout le marché, seulement ce qui mérite vraiment votre attention.</p>
-            </article>
-            <article class="mini-card">
-              <p class="card-kicker">Plus de clarté</p>
-              <h3>Vous comparez mieux.</h3>
-              <p>Le bon niveau d’info au bon endroit pour décider vite si une offre vaut le coup.</p>
-            </article>
-            <article class="mini-card">
-              <p class="card-kicker">Aperçu réel</p>
-              <h3>Vous voyez la shortlist avant l’ouverture.</h3>
-              <p>Les premiers abonnés reçoivent les sélections de lancement et aident à façonner la suite.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="proof-grid" id="ai">
-          <article class="proof-card large-proof">
-            <span class="eyebrow">IA à venir</span>
-            <h2>Bientôt : score CV, matching et optimisation de candidature.</h2>
-            <p>
-              Signal démarre par une shortlist de qualité. Ensuite, l’IA aidera à mieux cibler les rôles,
-              aligner le CV et prioriser les candidatures les plus pertinentes.
-            </p>
-            <ul class="feature-list">
-              <li>Score CV vs offre pour aller plus vite.</li>
-              <li>Optimisation du CV pour les rôles Data & IA.</li>
-              <li>Matching intelligent entre profil et opportunités.</li>
-            </ul>
-          </article>
-          <article class="proof-card stats">
+        <aside class="preview-shell" aria-label="Aperçu de la shortlist">
+          <div class="preview-top">
             <div>
-              <p class="stat-value">Étape 1</p>
-              <p class="stat-label">shortlist Data / IA</p>
+              <div class="preview-title">Aperçu de la shortlist</div>
+              <div class="preview-subtitle">Format simple, lisible et utile dès le premier regard.</div>
             </div>
-            <div>
-              <p class="stat-value">Étape 2</p>
-              <p class="stat-label">matching intelligent</p>
+            <div class="small-badge">Hebdo · France</div>
+          </div>
+
+          <article class="job-card">
+            <div class="job-top">
+              <div>
+                <div class="job-role">Senior Data Engineer</div>
+                <div class="job-meta">Paris · Hybride · CDI · Scale-up</div>
+              </div>
+              <div class="job-salary">70–85k€</div>
             </div>
-            <div>
-              <p class="stat-value">Étape 3</p>
-              <p class="stat-label">optimisation CV & priorisation</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">dbt</span>
+              <span class="tag">BigQuery</span>
+              <span class="tag">Airflow</span>
             </div>
           </article>
-        </section>
 
-        <section class="cta-block" id="cta">
-          <div>
-            <span class="eyebrow">Bêta privée</span>
-            <h2>Recevez les premières shortlists Data/IA.</h2>
-            <p>
-              Rejoignez la liste d’attente pour suivre le lancement et recevoir les premières opportunités vraiment retenues.
+          <article class="job-card">
+            <div class="job-top">
+              <div>
+                <div class="job-role">ML Engineer</div>
+                <div class="job-meta">Remote France · CDI · Produit IA</div>
+              </div>
+              <div class="job-salary">65–90k€</div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">AWS</span>
+              <span class="tag">LLM tooling</span>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <div class="job-top">
+              <div>
+                <div class="job-role">Analytics Engineer</div>
+                <div class="job-meta">Lyon · Remote partiel · CDI</div>
+              </div>
+              <div class="job-salary">55–70k€</div>
+            </div>
+            <div class="tags">
+              <span class="tag">SQL</span>
+              <span class="tag">dbt</span>
+              <span class="tag">Looker</span>
+              <span class="tag">Snowflake</span>
+            </div>
+          </article>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container stat-strip" aria-label="Résumé du positionnement">
+        <div class="stat">
+          <strong>10 max</strong>
+          <span class="muted">offres retenues par semaine pour garder un vrai signal</span>
+        </div>
+        <div class="stat">
+          <strong>100%</strong>
+          <span class="muted">Data / IA : pas de mélange avec software, product ou cloud</span>
+        </div>
+        <div class="stat">
+          <strong>France</strong>
+          <span class="muted">marché de départ, avec remote et hybride inclus</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Pourquoi</span>
+          <h2>Les bons jobs Data & IA sont noyés dans trop de bruit.</h2>
+          <p class="section-lead">
+            Les boards généralistes mélangent tout. Résultat : trop de temps perdu,
+            trop peu de contexte utile, et des offres difficiles à comparer rapidement.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Trop de mélange</h3>
+            <p class="muted">
+              Software, product, cloud, data, IA : la recherche devient floue et les rôles hors cible se multiplient.
             </p>
+          </article>
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Trop peu de contexte</h3>
+            <p class="muted">
+              Stack, salaire, remote et séniorité sont souvent absents ou cachés derrière plusieurs clics.
+            </p>
+          </article>
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Trop de temps perdu</h3>
+            <p class="muted">
+              On passe plus de temps à filtrer et comparer qu’à identifier les opportunités réellement pertinentes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="preview">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Aperçu</span>
+          <h2>Une shortlist courte, lisible et immédiatement exploitable.</h2>
+          <p class="section-lead">
+            Chaque offre garde l’essentiel en vue : rôle, localisation, stack, niveau de flexibilité et salaire quand disponible.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="job-card">
+            <div class="job-top">
+              <div>
+                <div class="job-role">Data Analyst</div>
+                <div class="job-meta">Paris · Remote partiel · Produit</div>
+              </div>
+              <div class="job-salary">50–60k€</div>
+            </div>
+            <div class="tags">
+              <span class="tag">SQL</span>
+              <span class="tag">Python</span>
+              <span class="tag">Looker</span>
+              <span class="tag">Product Analytics</span>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <div class="job-top">
+              <div>
+                <div class="job-role">AI Engineer</div>
+                <div class="job-meta">Remote France · Start-up IA</div>
+              </div>
+              <div class="job-salary">70–95k€</div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">LLM Ops</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Vector DB</span>
+            </div>
+          </article>
+
+          <article class="job-card">
+            <div class="job-top">
+              <div>
+                <div class="job-role">Data Scientist</div>
+                <div class="job-meta">Paris · Hybride · Série B</div>
+              </div>
+              <div class="job-salary">60–80k€</div>
+            </div>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">scikit-learn</span>
+              <span class="tag">Experimentation</span>
+              <span class="tag">SQL</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Sélection</span>
+          <h2>Ce que vous recevrez au lancement.</h2>
+          <p class="section-lead">
+            Pas un catalogue infini. Une sélection utile pour décider plus vite si une offre mérite vraiment votre attention.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">A</div>
+            <h3>Shortlist hebdo</h3>
+            <p class="muted">Une cadence simple, régulière et compacte pour éviter le scroll infini.</p>
+          </article>
+          <article class="card">
+            <div class="icon">B</div>
+            <h3>Infos utiles d’abord</h3>
+            <p class="muted">Stack, niveau, remote, localisation et salaire quand disponible.</p>
+          </article>
+          <article class="card">
+            <div class="icon">C</div>
+            <h3>France d’abord</h3>
+            <p class="muted">Un marché de départ plus net, avant d’ouvrir progressivement à l’Europe de l’Ouest.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Pour qui</span>
+          <h2>Pensé pour les profils Data & IA.</h2>
+        </div>
+        <div class="audience-grid">
+          <div class="audience-card">Data Analyst</div>
+          <div class="audience-card">Data Scientist</div>
+          <div class="audience-card">Data Engineer</div>
+          <div class="audience-card">ML Engineer</div>
+          <div class="audience-card">AI Engineer</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ia">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">IA à venir</span>
+          <h2>D’abord une shortlist de qualité. Ensuite, l’IA pour mieux candidater.</h2>
+          <p class="section-lead">
+            Le lancement reste simple : une sélection utile. Ensuite, l’IA viendra renforcer la valeur avec un meilleur ciblage des offres et une candidature plus efficace.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">1</div>
+            <h3>Score CV vs offre</h3>
+            <p class="muted">Identifier plus vite les opportunités réellement alignées avec le profil.</p>
+          </article>
+          <article class="card">
+            <div class="icon">2</div>
+            <h3>Optimisation du CV</h3>
+            <p class="muted">Adapter plus facilement son CV aux rôles Data & IA ciblés.</p>
+          </article>
+          <article class="card">
+            <div class="icon">3</div>
+            <h3>Matching intelligent</h3>
+            <p class="muted">Prioriser les candidatures avec le meilleur potentiel de réponse.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="waitlist">
+      <div class="container">
+        <div class="waitlist">
+          <div class="waitlist-grid">
+            <div>
+              <span class="kicker">Bêta privée</span>
+              <h2>Recevez les premières shortlists Data/IA.</h2>
+              <p class="section-lead">
+                Rejoignez la liste d’attente pour suivre le lancement et recevoir les premières opportunités vraiment retenues.
+              </p>
+              <div class="metric-row inline-list" style="margin-top: 18px;">
+                <span><span class="check">✓</span> 1 email par semaine max</span>
+                <span><span class="check">✓</span> 0 spam</span>
+                <span><span class="check">✓</span> priorité aux premiers inscrits</span>
+              </div>
+            </div>
+
+            <form class="waitlist-form" action="https://formsubmit.co/demba.fo95@gmail.com" method="POST" data-track-form="waitlist">
+              <input type="hidden" name="_subject" value="Nouvelle inscription waitlist Signal" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value="https://demba09.github.io/signal-ia-jobs/thanks.html" />
+              <div class="form-row">
+                <input type="email" name="email" placeholder="Votre email pro ou perso" required aria-label="Votre email" />
+                <input class="btn btn-primary" type="submit" value="Recevoir la 1re shortlist" />
+              </div>
+              <p class="waitlist-note">
+                1 email par semaine max. Zéro spam. Redirection automatique vers la page de confirmation.
+              </p>
+            </form>
           </div>
-          <div class="cta-actions">
-            <a class="button primary" data-track-event="Waitlist CTA Click" data-track-location="footer" href="#waitlist">
-              Recevoir la 1re shortlist Data/IA
-            </a>
-            <a class="button ghost" data-track-event="Recruiter CTA Click" data-track-location="footer" href="recruiter.html">
-              Je recrute en Data/IA
-            </a>
-          </div>
-        </section>
-      </main>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Signal — Jobs Data & IA en France</span>
+      <span>Shortlist claire. Marché France d’abord.</span>
     </div>
-    <script>
-      (function () {
-        function track(name, props) {
-          if (typeof window.plausible === 'function') {
-            window.plausible(name, props ? { props: props } : undefined);
-          }
-        }
+  </footer>
 
-        document.addEventListener('click', function (e) {
-          var el = e.target.closest('[data-track-event]');
-          if (!el) return;
-          track(el.getAttribute('data-track-event'), {
-            location: el.getAttribute('data-track-location') || 'unknown'
-          });
+  <script>
+    (function () {
+      function track(name, props) {
+        if (typeof window.plausible === 'function') {
+          window.plausible(name, props ? { props: props } : undefined);
+        }
+      }
+
+      document.addEventListener('click', function (e) {
+        var el = e.target.closest('[data-track-event]');
+        if (!el) return;
+        track(el.getAttribute('data-track-event'), {
+          location: el.getAttribute('data-track-location') || 'unknown'
         });
+      });
 
-        var form = document.querySelector('form[data-track-form="waitlist"]');
-        if (form) {
-          form.addEventListener('submit', function () {
-            track('Waitlist Submit');
-          });
-        }
-      })();
-    </script>
-  </body>
+      var form = document.querySelector('form[data-track-form="waitlist"]');
+      if (form) {
+        form.addEventListener('submit', function () {
+          track('Waitlist Submit');
+        });
+      }
+    })();
+  </script>
+</body>
 </html>
