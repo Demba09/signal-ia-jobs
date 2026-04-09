@@ -21,6 +21,8 @@
   <style>
   :root {
     color-scheme: light dark;
+    --max: 1120px;
+    --radius: 28px;
     --bg: #f5f7fb;
     --bg-alt: #edf1f9;
     --surface: rgba(255, 255, 255, 0.82);
@@ -96,7 +98,7 @@
   a { color: inherit; text-decoration: none; }
   img { max-width: 100%; display: block; }
   .container {
-    width: min(calc(100% - 40px), var(--max));
+    width: min(calc(100% - 96px), var(--max));
     margin: 0 auto;
   }
 
@@ -195,7 +197,7 @@
   .hero-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
-    gap: 28px;
+    gap: 40px;
     align-items: center;
   }
 
@@ -227,7 +229,7 @@
     margin-top: 18px;
     color: var(--muted);
     font-size: 1.1rem;
-    max-width: 60ch;
+    max-width: 58ch;
   }
 
   .highlight { color: var(--accent); }
