@@ -504,13 +504,21 @@
     min-height: 108px;
   }
 
-  .company-card img {
+  .company-card img,
+  .company-card .company-logo {
     display: block;
     height: 32px;
     width: auto;
     max-width: 128px;
     object-fit: contain;
     filter: none;
+  }
+
+  .company-logo--alan {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
   }
 
   .company-card span {
@@ -847,27 +855,27 @@
         </div>
         <div class="company-grid" aria-label="Exemples d'entreprises pertinentes">
           <div class="company-card">
-            <img src="assets/company-logos/alan.png" alt="Alan" loading="lazy" decoding="async" />
+            <img class="company-logo company-logo--alan" src="assets/company-logos/alan.svg" alt="Alan" loading="lazy" decoding="async" />
             <span>Alan</span>
           </div>
           <div class="company-card">
-            <img src="assets/company-logos/qonto.svg" alt="Qonto" loading="lazy" decoding="async" />
+            <img class="company-logo" src="assets/company-logos/qonto.svg" alt="Qonto" loading="lazy" decoding="async" />
             <span>Qonto</span>
           </div>
           <div class="company-card">
-            <img src="assets/company-logos/doctolib.png" alt="Doctolib" loading="lazy" decoding="async" />
+            <img class="company-logo" src="assets/company-logos/doctolib.png" alt="Doctolib" loading="lazy" decoding="async" />
             <span>Doctolib</span>
           </div>
           <div class="company-card">
-            <img src="assets/company-logos/blablacar.png" alt="BlaBlaCar" loading="lazy" decoding="async" />
+            <img class="company-logo" src="assets/company-logos/blablacar.png" alt="BlaBlaCar" loading="lazy" decoding="async" />
             <span>BlaBlaCar</span>
           </div>
           <div class="company-card">
-            <img src="assets/company-logos/backmarket.svg" alt="Back Market" loading="lazy" decoding="async" />
+            <img class="company-logo" src="assets/company-logos/backmarket.svg" alt="Back Market" loading="lazy" decoding="async" />
             <span>Back Market</span>
           </div>
           <div class="company-card">
-            <img src="assets/company-logos/mistral.svg" alt="Mistral AI" loading="lazy" decoding="async" />
+            <img class="company-logo" src="assets/company-logos/mistral.svg" alt="Mistral AI" loading="lazy" decoding="async" />
             <span>Mistral AI</span>
           </div>
         </div>
